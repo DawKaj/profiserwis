@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css?family=Bai+Jamjuree:400,700|Roboto:400,900|Montserrat:400,600&display=swap');
+//@import url('https://fonts.googleapis.com/css?family=Raleway:400,700|Roboto|Montserrat:400,700&display=swap');
+
+@import './variables';
+@import '../components/burger-menu/menu';
+@import '../components/layout/layout';
+@import '../components/footer-menu/footermenu';
+@import '../components/footer-menu/cookies';
+@import '../components/home/home';
+
+*,
+::after,
+::before {
+  -webkit-box-sizing: inherit;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+  background-image: url('../assets/images/background_pattern.jpg');
+
+  font-family: $global-font-family;
+  font-size: $global-fonts-size;
+  line-height: $global-line-height;
+  color: $global-font-color;
+  //overflow: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: $global-color-muted;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 5rem;
+}
+
+.container {
+  position: relative;
+  top: 13vh;
+  //bottom: 5vh;
+  height: 85vh;
+  width: 85vw;
+  max-width: 1500px;
+  margin: auto;
+}

@@ -1,0 +1,39 @@
+$arrow-icon: '../assets/icon/arrow-icon.svg';
+
+$global-font-family: 'Montserrat';
+$global-fonts-size: 14px;
+$global-font-color: white;
+$global-line-height: 1.3;
+
+$sizes-media: (
+  'small' '768px' 's',
+  'medium' '968px' 'm',
+  'large' '1200px' 'l',
+  'xlarge' '1600px' 'xl'
+);
+
+//@function media($size) {
+//  @return map-get($sizes-media, $size);
+//}
+
+$sizes: ('small', 'medium', 'large', 'xlarge', '2xlarge');
+
+/* COLORS */
+$global-color-default: #fff;
+$global-color-dark: #000;
+$global-color-primary: #2196f3;
+$global-color-secondary: #20254d;
+$global-color-muted: #a5a19d;
+$global-color-accent: #6df2b7;
+
+$border-color: $global-color-muted;
+
+:export {
+  globalcolordefault: $global-color-default;
+  globalcolordark: $global-color-dark;
+  globalcolorprimary: $global-color-primary;
+  globalcolorsecondary: $global-color-secondary;
+  globalcolormuted: $global-color-muted;
+  globalcoloraccent: $global-color-accent;
+  bordercolor: $border-color;
+}

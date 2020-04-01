@@ -1,0 +1,81 @@
+@import './variables';
+
+.home {
+  position: relative;
+  font-family: 'Bai Jamjuree';
+  font-size: 2.5rem;
+  font-weight: bold;
+  line-height: 110%;
+
+  margin: auto;
+  //max-width: 968px;
+  height: 100%;
+
+  & a {
+    display: block;
+    color: transparent;
+    opacity: 0.7;
+    transition: color 200ms ease, opacity 200ms ease;
+    -webkit-text-stroke: 1px white;
+    &::after {
+      //content: url($arrow-icon);
+      content: url($arrow-icon);
+      position: relative;
+      top: 4px;
+      left: 15px;
+    }
+  }
+}
+
+@media screen and (min-width: 968px) {
+  .home {
+    text-align: center;
+
+    & p,
+    a {
+      display: inline;
+    }
+
+    & a::before {
+      content: ' ';
+    }
+
+    & a::after {
+      content: ' ';
+    }
+  }
+}
+
+.perspective-card {
+  position: absolute;
+  perspective: 1100px;
+  top: 0;
+  left: 0;
+  text-align: center;
+  //pointer-events: none;
+  width: 100%;
+  height: 100%;
+}
+
+.perspective-card-content {
+  position: relative;
+  //transform-style: preserve-3d;
+  width: 100%;
+  max-width: 968px;
+  //height: 100%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: auto;
+}
+
+.content-card {
+  position: absolute;
+  font-family: 'Roboto';
+  letter-spacing: 3px;
+  font-size: 1.8rem;
+  font-weight: 400;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+}

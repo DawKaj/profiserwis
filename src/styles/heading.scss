@@ -1,0 +1,25 @@
+@import './variables';
+
+// .heading-  $heading-line-height.$name {}
+@each $name, $height, $size, $weight in $heading-line-height {
+  .heading-#{$name} {
+    font-size: #{$size};
+    line-height: #{$height};
+    font-weight: #{$weight};
+    margin: 1.25rem;
+  }
+}
+
+//.@media (min-width: $sizes-media.$name {
+//.heading+
+//}
+@each $name, $size, $prefix in $sizes-media {
+  @media (min-width: #{$size}) {
+    @each $nameH, $heightH, $sizeH, $weight in $heading-line-height {
+      .heading-#{$nameH}\@#{$prefix} {
+        font-size: calc(#{$sizeH} * 1.5);
+        line-height: #{$heightH};
+      }
+    }
+  }
+}

@@ -1,0 +1,263 @@
+@import './variables';
+
+.burger-icon {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 0.7rem;
+}
+
+.logo {
+  text-transform: uppercase;
+  letter-spacing: 0.115rem;
+  //font-family: 'Orbitron';
+  font-size: 1.2rem;
+
+  & a {
+    color: $global-color-accent;
+  }
+}
+
+.inscription {
+  visibility: hidden;
+  font-size: 0.5rem;
+
+  @media print, screen and (min-width: 640px) {
+    visibility: visible;
+  }
+}
+
+.header-component {
+  z-index: 200;
+  position: fixed;
+  width: calc(100% - 100px);
+  top: 0;
+  left: 50%;
+  padding: 30px;
+  color: $global-color-muted;
+  max-width: 1500px;
+  transform: translate(-50%, 0%);
+  //pointer-events: none;
+  transition: opacity 0.2s;
+  @media print, screen and (max-width: 960px) {
+    padding: 0;
+  }
+}
+
+.header-component::after {
+  content: '';
+  z-index: -1;
+  // position: absolute;
+  // top: 0;
+  // left: 0;
+  // width: 100%;
+  // height: 100%;
+  // //background-image: url('/img/background_pattern.jpg');
+  // background-repeat: repeat;
+  // transition: opacity 0.5s;
+  // opacity: 0;
+}
+
+@media (max-width: 768px) {
+  .header-component::after {
+    opacity: 1;
+  }
+}
+
+///////
+
+.menu {
+  visibility: hidden;
+  z-index: 99;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: $global-color-dark;
+  //pointer-events: none;
+  opacity: 0;
+  transform: scale3d(1.1, 1.1, 1.1);
+  transition: transform 1.5s cubic-bezier(0.075, 0.82, 0.165, 1), opacity 0.5s;
+
+  & a {
+  }
+}
+
+.menu.open {
+  opacity: 1;
+  transform: scale3d(1, 1, 1);
+  pointer-events: auto;
+  visibility: visible;
+}
+
+.menu-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.menu-content {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 15;
+}
+
+@media (max-width: 768px) {
+  .menu-content {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    height: 100vh;
+    top: auto;
+    transform: none;
+  }
+}
+
+.menu-content ul {
+  z-index: 40;
+  position: relative;
+  display: inline-block;
+  margin-left: 8%;
+}
+
+@media (max-width: 768px) {
+  .menu-content ul {
+    margin: 0;
+  }
+}
+
+.menu-content li {
+  display: flex;
+  align-items: baseline;
+  position: relative;
+  transform: translate3d(0, 0, 0);
+  transition: transform 1s cubic-bezier(0.075, 0.82, 0.165, 1),
+    opacity 0.25s ease-in-out, filter 0.1s linear;
+  filter: blur(0);
+  will-change: transform, filter;
+}
+
+.menu-content li .icon {
+  position: relative;
+  transform: translate3d(-20px, 0, 0);
+  opacity: 0;
+  transition: transform 1s cubic-bezier(0.075, 0.82, 0.165, 1),
+    opacity 0.2s ease;
+}
+
+@media (max-width: 768px) {
+  .menu-content li .icon {
+    display: none;
+  }
+}
+
+.menu-content li .icon img {
+  width: 40px;
+  margin-right: 20px;
+}
+
+.menu-content li:not(:first-child) {
+  margin-top: 4vh;
+}
+
+@media (max-width: 768px) {
+  .menu-content li:not(:first-child) {
+    margin-top: 30px;
+  }
+}
+
+.menu-content li.unactive {
+  opacity: 0.5;
+  filter: blur(4px);
+}
+
+.menu-content li.active {
+  transform: translate3d(90px, 0, 0);
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .menu-content li.active {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.menu-content li.active .icon {
+  opacity: 0.5;
+  transform: translate3d(0, 0, 0);
+}
+
+.menu-content li.active .icon span {
+  width: 100%;
+  transition-delay: 0.25s;
+}
+
+.menu-content li.active .icon .fill {
+  width: 100%;
+}
+
+.menu-content .link span:nth-of-type(1) {
+  //font-family: 'Orbitron', Arial, Helvetica, sans-serif;
+  font-size: 2rem;
+  line-height: normal;
+  font-weight: 600;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  color: $global-color-default;
+
+  @media (max-width: 640px) {
+    font-size: 1.6rem;
+    letter-spacing: normal;
+  }
+}
+
+.menu-content .link span:nth-of-type(2) {
+  //font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  font-size: 0.7rem;
+  line-height: normal;
+  letter-spacing: 3px;
+  display: block;
+  text-transform: uppercase;
+  line-height: 18px;
+  color: $global-color-accent;
+  @media (max-width: 640px) {
+    letter-spacing: normal;
+  }
+}
+
+.menu-image {
+  position: absolute;
+  height: 100vh;
+  width: 35%;
+  right: 0;
+  top: 0;
+}
+
+@media (max-width: 768px) {
+  .menu-image {
+    display: none;
+  }
+}
+
+.slide-wrapper {
+  overflow: hidden;
+  position: absolute;
+  width: 0%;
+  height: 100%;
+  z-index: 1;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+}
+
+.slide img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}

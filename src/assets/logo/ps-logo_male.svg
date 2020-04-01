@@ -1,0 +1,30 @@
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   id="svg16"
+   viewBox="0 0 80 80"
+  >
+  <polygon
+     transform="matrix(0.57840328,0.13339554,-0.13353492,0.57779954,67.418721,-32.378204)"
+     style="fill:#dbeef3"
+     points="0,125.03 22.19,147.1 56.05,147.26 0.12,90.38 "
+     id="polygon1" />
+  <polygon
+     transform="matrix(-0.13353492,0.57779954,-0.57840328,-0.13339554,112.94522,67.566696)"
+     style="fill:#92cddc"
+     points="0,125.03 22.19,147.1 56.05,147.26 0.12,90.38 "
+     id="polygon2" />
+  <polygon
+     transform="matrix(-0.57840328,-0.13339554,0.13353492,-0.57779954,12.929021,112.9858)"
+     style="fill:#31859b"
+     points="0,125.03 22.19,147.1 56.05,147.26 0.12,90.38 "
+     id="polygon3" />
+  <polygon
+     transform="matrix(0.13353492,-0.57779954,0.57840328,0.13339554,-32.616289,13.050396)"
+     style="fill:#205867"
+     points="0,125.03 22.19,147.1 56.05,147.26 0.12,90.38 "
+     id="polygon4" />
+</svg>
